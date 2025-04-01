@@ -6,8 +6,9 @@ class EventForm(forms.ModelForm):
         model = Events
         fields = '__all__'
 
-    # Adding custom validation for each field if needed
-
+    Date = forms.DateTimeField(
+        widget=forms.DateTimeInput(attrs={'type': 'datetime-local'})
+    )
     def clean_Title(self):
         title = self.cleaned_data.get('Title')
         if not title:

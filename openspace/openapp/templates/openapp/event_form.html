@@ -1,29 +1,72 @@
+{% extends "openapp/base.html" %}
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Create Event</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add Bootstrap CDN -->
+    <!-- Add the datetime picker library (optional) -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
     <style>
+        /* Centering the form and adding custom styles */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: #f4f4f4;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .error {
+            color: red;
+            margin-top: 20px;
+        }
+
+        button {
+            width: 100%;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+            padding: 30px;
+            border: 2px solid #ccc;
+            background-color: #f9f9f9;
+        }
     </style>
 </head>
+{% block content %}
+
 <body>
-    <div class="form-container">
-        <h1>Create Event</h1>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Create Event</button>
+    <div class="form-container align-items-center justify-content-center">
+        <h1 class="text-center mb-4">Create Event</h1>
+        <form method="POST" class=" align-items-center justify-content-center">
+            {% csrf_token %}           
+            
+                {% for field in form %}
+                    <div class="align-items-center justify-content-center">
+                        {{ field.errors }}
+                        {{ field.label_tag }} {{ field }}
+                    </div>
+                {% endfor %}
+            
+            <button type="submit" class="btn btn-primary mt-3">Create Event</button>
         </form>
+
         {% if form.errors %}
             <div class="error">
                 <ul>
@@ -36,5 +79,17 @@
             </div>
         {% endif %}
     </div>
+
+    <!-- Include the datetime picker JavaScript (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        // Initialize flatpickr for the event_date field
+        flatpickr('.datetimepicker', {
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+            time_24hr: true,
+        });
+    </script>
 </body>
+{% endblock %}
 </html>

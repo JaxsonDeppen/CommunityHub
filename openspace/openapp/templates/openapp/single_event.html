@@ -1,3 +1,5 @@
+{% extends "openapp/base.html" %}
+
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -17,7 +19,8 @@
         </style>
     </head>
     <body>
-        <div class="event-detail-container">
+        {%block content %}
+        <div class="event-detail-container align-center justify-content-center">
             <h1 class="event-title">{{ event.Title }}</h1>
             <p class="event-meta">
                 <span class="event-location">{{ event.Location }}</span> | 
@@ -27,5 +30,6 @@
                 <p>{{ event.Description }}</p>
             </div>
         </div>
+        {% endblock %}
     </body>
 </html>
