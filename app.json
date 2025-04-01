@@ -1,8 +1,8 @@
 {
   "name": "Start on Heroku: Python",
   "description": "A barebones Python app, which can easily be deployed to Heroku.",
-  "repository": "https://github.com/JaxsonDeppen/CommunityHub",
-  "website": "https://cherry-cobbler-20051-452091210b41.herokuapp.com/",
+  "repository": "https://github.com/heroku/python-getting-started",
+  "website": "https://devcenter.heroku.com/articles/getting-started-with-python",
   "keywords": ["python", "django"],
   "env": {
     "DJANGO_SECRET_KEY": {
