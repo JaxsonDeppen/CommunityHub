@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{ event.name }}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="event-detail-container">
+            <h1 class="event-title">{{ event.Title }}</h1>
+            <p class="event-meta">
+                <span class="event-location">{{ event.Location }}</span> | 
+                <span class="event-date">{{ event.Date }}</span>
+            </p>
+            <div class="event-description">
+                <p>{{ event.Description }}</p>
+            </div>
+        </div>
+    </body>
+</html>

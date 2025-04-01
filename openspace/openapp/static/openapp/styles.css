@@ -1,0 +1,89 @@
+ /* Style for the event container */
+ .event-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    gap: 20px; /* Space between the events */
+    padding: 20px;
+}
+
+/* Style for each event card */
+.event-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.event-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Date styling */
+.event-card p.date {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.event-detail-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.event-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.event-meta {
+    font-size: 1.2em;
+    color: #555;
+}
+.event-description {
+    margin-top: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+.event-location,
+.event-date {
+    font-weight: bold;
+}
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-container label {
+    font-weight: bold;
+}
+.form-container input, .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+}
+.form-container .error {
+    color: red;
+    font-size: 0.9em;
+}
