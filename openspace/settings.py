@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['cherry-cobbler-20051-452091210b41.herokuapp.com', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = [
-    'cherry-cobbler-20051-452091210b41.herokuapp.com',  # your existing domain            # new domain to allow
+    'https://cherry-cobbler-20051-452091210b41.herokuapp.com',  # your existing domain            # new domain to allow
 ]
 # Application definition
 
