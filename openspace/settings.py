@@ -27,7 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['cherry-cobbler-20051-452091210b41.herokuapp.com', '127.0.0.1']
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'cherry-cobbler-20051-452091210b41.herokuapp.com',  # your existing domain            # new domain to allow
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'openapp',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
